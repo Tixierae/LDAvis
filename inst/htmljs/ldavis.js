@@ -32,7 +32,7 @@ LDAvis = function(to_select, json_file) {
         current: 1
     },
     color1 = "#1f77b4", // baseline color for default topic circles and overall term frequencies
-    color2 = "#d62728"; // 'highlight' color for selected topics and term-topic frequencies
+    color2 = "#2c26d6"; // 'highlight' color for selected topics and term-topic frequencies
 
     // Set the duration of each half of the transition:
     var duration = 750;
@@ -440,7 +440,7 @@ LDAvis = function(to_select, json_file) {
             });
 
         svg.append("text")
-            .text("Intertopic Distance Map (via multidimensional scaling)")
+            .text("Topic Map")
             .attr("x", mdswidth/2 + margin.left)
             .attr("y", 30)
 	    .style("font-size", "16px")
@@ -497,8 +497,10 @@ LDAvis = function(to_select, json_file) {
             .attr("y", mdsheight + 10 + (3/2)*barguide.height + 5)
             .style("dominant-baseline", "middle")
             .text("Estimated term frequency within the selected topic");
-
+     
 	// footnotes:
+	
+	/*
         d3.select("#bar-freqs")
             .append("a")
             .attr("xlink:href", "http://vis.stanford.edu/files/2012-Termite-AVI.pdf")
@@ -517,7 +519,8 @@ LDAvis = function(to_select, json_file) {
             .attr("y", mdsheight + 10 + (8/2)*barguide.height + 5)
             .style("dominant-baseline", "middle")
             .text("2. relevance(term w | topic t) = \u03BB * p(w | t) + (1 - \u03BB) * p(w | t)/p(w); see Sievert & Shirley (2014)");
-
+        */
+		
         // Bind 'default' data to 'default' bar chart
         var basebars = chart.selectAll(".bar-totals")
             .data(barDefault2)
@@ -664,7 +667,7 @@ LDAvis = function(to_select, json_file) {
 		.attr("x", 0)
 		.attr("y", 0)
 		.style("font-size", "14px")
-		.text("Slide to adjust relevance metric:");
+		.text("Relevance weight parameter:");
 	    var yy = d3.select("#lambdaZero")
 		.append("text")
 		.attr("x", 125)
