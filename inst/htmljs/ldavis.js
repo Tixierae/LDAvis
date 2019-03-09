@@ -397,7 +397,7 @@ LDAvis = function(to_select, json_file) {
         // draw circles
         points.append("circle")
             .attr("class", "dot")
-            .style("opacity", 0.2)
+            .style("opacity", 0.4)
             .style("fill", color1)
             .attr("r", function(d) {
                 //return (rScaleMargin(+d.Freq));
@@ -478,7 +478,7 @@ LDAvis = function(to_select, json_file) {
             .attr("height", barguide.height)
             .attr("width", barguide.width)
             .style("fill", color1)
-            .attr("opacity", 0.4);
+            .attr("opacity", 0.6);
         d3.select("#bar-freqs").append("text")
             .attr("x", barguide.width + 5)
             .attr("y", mdsheight + 10 + barguide.height/2)
@@ -539,7 +539,7 @@ LDAvis = function(to_select, json_file) {
                 return x(d.Total);
             })
             .style("fill", color1)
-            .attr("opacity", 0.4);
+            .attr("opacity", 0.6);
 
         // Add word labels to the side of each bar
         basebars
@@ -808,7 +808,7 @@ LDAvis = function(to_select, json_file) {
                 })
                 .attr("height", y.rangeBand())
                 .style("fill", color1)
-                .attr("opacity", 0.4);
+                .attr("opacity", 0.6);
 
             var labelsEnter = labels.enter()
                 .append("text")
@@ -1095,7 +1095,7 @@ LDAvis = function(to_select, json_file) {
                     return x(d.Total);
                 })
                 .style("fill", color1)
-                .attr("opacity", 0.4);
+                .attr("opacity", 0.6);
 
             // Change word labels
             d3.selectAll(".terms")
@@ -1188,7 +1188,7 @@ LDAvis = function(to_select, json_file) {
                     return x(d.Total);
                 })
                 .style("fill", color1)
-                .attr("opacity", 0.4);
+                .attr("opacity", 0.6);
 
             //Change word labels
             d3.selectAll(".terms")
