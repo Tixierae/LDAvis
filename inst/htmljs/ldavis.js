@@ -590,7 +590,7 @@ LDAvis = function(to_select, json_file) {
         title.append("tspan")
 	    .attr("baseline-shift", "super")	    
 	    .attr("font-size", "12px")
-	    .text("(1)");
+	    .text();
 	
         // barchart axis adapted from http://bl.ocks.org/mbostock/1166403
         var xAxis = d3.svg.axis().scale(x)
@@ -634,19 +634,19 @@ LDAvis = function(to_select, json_file) {
 
  	    var previous = document.createElement("button");
 	    previous.setAttribute("id", topicDown);
-	    previous.setAttribute("style", "margin-left: 5px");
+	    previous.setAttribute("style", "margin-left: 5px;color: #fff; background-color: #337ab7; border-color: #2e6da4");
 	    previous.innerHTML = "Previous Topic";
             topicDiv.appendChild(previous);
 
 	    var next = document.createElement("button");
 	    next.setAttribute("id", topicUp);
-	    next.setAttribute("style", "margin-left: 5px");
+	    next.setAttribute("style", "margin-left: 5px;color: #fff; background-color: #337ab7; border-color: #2e6da4");
 	    next.innerHTML = "Next Topic";
             topicDiv.appendChild(next);
             
 	    var clear = document.createElement("button");
 	    clear.setAttribute("id", topicClear);
-	    clear.setAttribute("style", "margin-left: 5px");
+	    clear.setAttribute("style", "margin-left: 5px;color: #fff; background-color: #337ab7; border-color: #2e6da4");
 	    clear.innerHTML = "Clear Topic";
             topicDiv.appendChild(clear);
 
@@ -674,7 +674,7 @@ LDAvis = function(to_select, json_file) {
 		.attr("y", -5)
 		.style("font-size", "10px")
 		.style("position", "absolute")
-		.text("(2)");
+		.text("");
 	    
     	    var sliderDiv = document.createElement("div");
     	    sliderDiv.setAttribute("id", "sliderdiv");
