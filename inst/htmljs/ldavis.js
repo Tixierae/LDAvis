@@ -613,7 +613,7 @@ LDAvis = function(to_select, json_file) {
 
 	    // topic input container:
 	    var topicDiv = document.createElement("div");
-	    topicDiv.setAttribute("style", "padding: 5px; background-color: #e8e8e8; display: inline-block; width: " + mdswidth + "px; height: 50px; float: left");
+	    topicDiv.setAttribute("style", "padding: 5px; background-color: #ffffff; display: inline-block; width: " + mdswidth + "px; height: 50px; float: left");
 	    inputDiv.appendChild(topicDiv);
 
             var topicLabel = document.createElement("label");
@@ -655,7 +655,7 @@ LDAvis = function(to_select, json_file) {
     	    var lambdaDivWidth = barwidth;
     	    var lambdaDiv = document.createElement("div");
     	    lambdaDiv.setAttribute("id", "lambdaInput");
-    	    lambdaDiv.setAttribute("style", "padding: 5px; background-color: #e8e8e8; display: inline-block; height: 50px; width: " + lambdaDivWidth + "px; float: right; margin-right: 30px");
+    	    lambdaDiv.setAttribute("style", "padding: 5px; background-color: #ffffff; display: inline-block; height: 50px; width: " + lambdaDivWidth + "px; float: right; margin-right: 30px");
     	    inputDiv.appendChild(lambdaDiv);
 
     	    var lambdaZero = document.createElement("div");
@@ -1154,7 +1154,7 @@ LDAvis = function(to_select, json_file) {
 	    title.append("tspan")
 	     	.attr("baseline-shift", "super")	    
 	     	.attr("font-size", 12)
-	     	.text(1);
+	     	.text();
 
             // remove the red bars
             d3.selectAll(".overlay").remove();
