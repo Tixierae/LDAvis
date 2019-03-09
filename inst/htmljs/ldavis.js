@@ -34,7 +34,7 @@ LDAvis = function(to_select, json_file) {
 	
 	
     color1 = "#337ab7", // baseline color for default topic circles and overall term frequencies
-    color2 = "#ffd300"; // 'highlight' color for selected topics and term-topic frequencies
+    color2 = "#ffdf02"; // 'highlight' color for selected topics and term-topic frequencies
 
     // Set the duration of each half of the transition:
     var duration = 750;
