@@ -493,7 +493,7 @@ LDAvis = function(to_select, json_file) {
             .attr("height", barguide.height)
             .attr("width", barguide.width/2)
             .style("fill", color2)
-            .attr("opacity", 0.8);
+            .attr("opacity", 1);
         d3.select("#bar-freqs").append("text")
             .attr("x", barguide.width/2 + 5)
             .attr("y", mdsheight + 10 + (3/2)*barguide.height + 5)
@@ -853,7 +853,7 @@ LDAvis = function(to_select, json_file) {
                 })
                 .attr("height", y.rangeBand())
                 .style("fill", color2)
-                .attr("opacity", 0.8);
+                .attr("opacity", 1);
 
 
             if (increase) {
@@ -1129,7 +1129,7 @@ LDAvis = function(to_select, json_file) {
                     return x(d.Freq);
                 })
                 .style("fill", color2)
-                .attr("opacity", 0.8);
+                .attr("opacity", 1);
 
             // adapted from http://bl.ocks.org/mbostock/1166403
             var xAxis = d3.svg.axis().scale(x)
