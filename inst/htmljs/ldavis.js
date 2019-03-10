@@ -14,7 +14,7 @@ LDAvis = function(to_select, json_file) {
         element: undefined
     },
     vis_state = {
-        lambda: 1,
+        lambda: 0.6,
         topic: 0,
         term: "",
         topic_clicked: 0,
@@ -28,8 +28,8 @@ LDAvis = function(to_select, json_file) {
     mdsData3, // topic proportions for all terms in the viz
     lamData, // all terms that are among the top-R most relevant for all topics, lambda values
     lambda = {
-        old: 1,
-        current: 1
+        old: 0.6,
+        current: 0.6
     },
 	
 	
