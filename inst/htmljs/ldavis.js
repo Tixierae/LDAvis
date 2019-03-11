@@ -398,7 +398,7 @@ LDAvis = function(to_select, json_file) {
 
         // draw circles
         points.append("circle")
-            .attr("class", "dot")
+            .attr("class", "circledot")
             .style("opacity", 0.4)
             .style("fill", color1)
             .attr("r", function(d) {
@@ -1261,7 +1261,7 @@ LDAvis = function(to_select, json_file) {
                 .domain([0, 1]).range([0, rMax]);
 
             // Change size of bubbles according to the word's distribution over topics
-            d3.selectAll(".dot")
+            d3.selectAll(".circledot")
                 .data(radius)
                 .transition()
                 .attr("r", function(d) {
@@ -1270,7 +1270,7 @@ LDAvis = function(to_select, json_file) {
                 });
 
             // re-bind mdsData so we can handle multiple selection
-            d3.selectAll(".dot")
+            d3.selectAll(".circledot")
                 .data(mdsData)
 
             // Change sizes of topic numbers:
@@ -1290,7 +1290,7 @@ LDAvis = function(to_select, json_file) {
             if (term == null) return null;
             term.style["fontWeight"] = "normal";
 
-            d3.selectAll(".dot")
+            d3.selectAll(".circledot")
                 .data(mdsData)
                 .transition()
                 .attr("r", function(d) {
