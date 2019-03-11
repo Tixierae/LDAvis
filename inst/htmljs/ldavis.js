@@ -1247,14 +1247,14 @@ LDAvis = function(to_select, json_file) {
                 radius[dat2[i].Topic - 1] = dat2[i].Freq;
             }
 
-            var size = [];
+            var topicSize = [];
             for (var i = 0; i < K; ++i) {
-                size[i] = 0;
+                topicSize[i] = 0;
             }
             for (i = 0; i < k; i++) {
                 // If we want to also re-size the topic number labels, do it here
                 // 11 is the default, so leaving this as 11 won't change anything.
-                size[dat2[i].Topic - 1] = 11;
+                topicSize[dat2[i].Topic - 1] = 11;
             }
 
             var rScaleCond = d3.scale.sqrt()
