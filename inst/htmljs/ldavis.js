@@ -320,9 +320,9 @@ LDAvis = function(to_select, json_file) {
 	
         // circle guide inspired from
         // http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?_r=0
-        circleGuide = function(rSize, topicSize) {
+        circleGuide = function(rSize, size) {
             d3.select("#leftpanel").append("circle")
-                .attr('class', "circleGuide" + topicSize)
+                .attr('class', "circleGuide" + size)
                 .attr('r', rSize)
                 .attr('cx', cx)
                 .attr('cy', mdsheight + rSize)
@@ -330,7 +330,7 @@ LDAvis = function(to_select, json_file) {
                 .style('stroke-dasharray', '2 2')
                 .style('stroke', '#999');
             d3.select("#leftpanel").append("line")
-                .attr('class', "lineGuide" + topicSize)
+                .attr('class', "lineGuide" + size)
                 .attr("x1", cx)
                 .attr("x2", cx2)
                 .attr("y1", mdsheight + 2 * rSize)
@@ -1247,20 +1247,20 @@ LDAvis = function(to_select, json_file) {
                 radius[dat2[i].Topic - 1] = dat2[i].Freq;
             }
 
-            var topicSize = [];
+            var size = [];
             for (var i = 0; i < K; ++i) {
-                topicSize[i] = 0;
+                size[i] = 0;
             }
             for (i = 0; i < k; i++) {
                 // If we want to also re-size the topic number labels, do it here
                 // 11 is the default, so leaving this as 11 won't change anything.
-                topicSize[dat2[i].Topic - 1] = 11;
+                size[dat2[i].Topic - 1] = 11;
             }
 
             var rScaleCond = d3.scale.sqrt()
                 .domain([0, 1]).range([0, rMax]);
 
-            // Change topicSize of bubbles according to the word's distribution over topics
+            // Change size of bubbles according to the word's distribution over topics
             d3.selectAll(".dot")
                 .data(radius)
                 .transition()
@@ -1273,7 +1273,7 @@ LDAvis = function(to_select, json_file) {
             d3.selectAll(".dot")
                 .data(mdsData)
 
-            // Change topicSizes of topic numbers:
+            // Change sizes of topic numbers:
             d3.selectAll(".txt")
                 .data(size)
                 .transition()
@@ -1298,7 +1298,7 @@ LDAvis = function(to_select, json_file) {
                     return (Math.sqrt((d.Freq/100)*mdswidth*mdsheight*circle_prop/Math.PI));
                 });
 
-            // Change topicSizes of topic numbers:
+            // Change sizes of topic numbers:
             d3.selectAll(".txt")
                 .transition()
                 .style("font-size", "11px");
